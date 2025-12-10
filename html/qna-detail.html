@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보안놀이터</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/snb.css">
+    <link rel="stylesheet" href="../css/normal-detail.css">
+    <link rel="stylesheet" href="../css/sideboard.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../imgs/Logo.png" alt="보안놀이터" />
+      <span>보안놀이터</span>
+    </div>
+    <div class="search-background">
+        <input type="text">
+        <img src="../imgs/Search.png" alt="검색아이콘">
+    </div>
+    <div class="buttons">
+      <div class="add-article-background">
+          <img src="../imgs/Plus.png" alt="게시판추가">
+          <img src="../imgs/ArrowDown.png" alt="">
+      </div>
+      <div class="bookmark-background">
+          <img src="../imgs/Bookmark.png" alt="북마크">
+      </div>
+      <div class="notification-background">
+          <img src="../imgs/Bell.png" alt="알림">
+      </div>
+      <div id="user-profile-area">
+        <img class="profile" id="my-avatar"></img>
+        <!-- <span id="my-nickname">닉네임</span> -->
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="snb">
+      <!-- Followers -->
+      <article class="followers">
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+      </article>
+      <!-- sidebar -->
+      <article class="sidebar">
+        <div class="pages">
+          <div class="home active">
+            <img src="../imgs/Home.png" alt="Home">
+            <span>홈</span>
+          </div>
+          <div class="my-scrap">
+            <img src="../imgs/Scrap.png" alt="Scrap">
+            <span>마이 스크랩 북</span>
+          </div>
+          <div class="my-page">
+            <img src="../imgs/MyPage.png" alt="MyPage">
+            <span>마이 페이지</span>
+          </div>
+        </div>
+        <hr>
+        <div class="article-shortcut">
+          <div class="title">
+            <img src="../imgs/Check.png" alt="">
+            <span>게시판 바로가기</span>
+          </div>
+          <div class="shortcut-list">
+            <span>
+              QNA 🙋
+            </span>
+            <span>
+              지식 💡
+            </span>
+            <span>
+              자유 👥
+            </span>
+          </div>
+        </div>
+        <hr>
+        <div class="setting">
+          <img src="../imgs/Setting.png" alt="">
+          <span>설정하기</span>
+        </span>
+      </article>
+    </section>
+    <section class="main">
+      <!-- content -->
+      <article>
+        <div class="article-info">
+          <span id="type" class="tag">QnA</span>
+          <time id="date" datetime="">2025년 12월 4일</time>
+        </div>
+        <div class="title">
+          <span id="title">하 진짜 학교 언덕 눈오는데 이제 어떻게 올라가냐</span>
+          <div class="info">
+            <img id="profile-img" src="../imgs/profileimg.png" alt="">
+            <span id="nickname" class="nickname">뿌슝피슝빠슝</span>
+            <span id="date-ago">약 3시간</span>
+            <div class="views">
+              <img src="../imgs/View.png" alt="">
+              <span id="view-count">112</span>
+            </div>
+
+            <div class="buttons">
+              <div class="share">
+                <img src="../imgs/Share.png" alt="">
+                <span>공유</span>
+              </div>
+              <div class="scrap">
+                <img src="../imgs/GrayBookmark.png" alt="">
+                <span>스크랩</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="content">
+          <span id="body">제곧내다 진짜 정신나간다 어쩌구</span>
+        </div>
+        <hr>
+        <div class="others">
+          <div class="likes">
+            <img id="heart-button" src="../imgs/Heart.png" alt="">
+            <span id="heart-count">117</span>
+          </div>
+          <div class="comments">
+            <img src="../imgs/Comment.png" alt="">
+            <span>117</span>
+          </div>
+        </div>
+      </article>
+      <!-- comment -->
+      <article class="comment-area">
+        <span id="comment-cnt">총 17개의 답변</span>
+        <form id="comment-form" class="comment-wrapper">
+          <textarea name="comment" id="comment" placeholder="예쁜 말 남기기"></textarea>
+          <hr>
+          <div class="comment-bar">
+            <img src="../imgs/CommentEditor.png" alt="">
+            <button type="submit">답변 달기</button>
+          </div>
+        </form>
+        <ul id="comment-list">
+        </ul>
+      </article>
+    </section>
+    <section class="sideboard">
+      <article>
+        <div class="title">
+          <h3>이번주 조회수 🔥</h3>
+          <time>25.12.02</time>
+        </div>
+        <div id="ranking-views">
+          <div class="content">
+            <div class="img"></div>
+            <div class="body">
+              <div class="title">
+                <div class="profile"></div>
+                <span>뿌슝 피슝 빠슝</span>
+                <div>지식</div>
+              </div>
+              <span>신입사원을 위한 AI 활용법 3가지 이런것들이 왜 필요한지 알게 ...</span>
+            </div>
+          </div>
+          <div class="content">
+            <div class="img"></div>
+            <div class="body">
+              <div class="title">
+                <div class="profile"></div>
+                <span>뿌슝 피슝 빠슝</span>
+                <div>지식</div>
+              </div>
+              <span>신입사원을 위한 AI 활용법 3가지 이런것들이 왜 필요한지 알게 ...</span>
+            </div>
+          </div>
+          <div class="content">
+            <div class="img"></div>
+            <div class="body">
+              <div class="title">
+                <div class="profile"></div>
+                <span>뿌슝 피슝 빠슝</span>
+                <div>지식</div>
+              </div>
+              <span>신입사원을 위한 AI 활용법 3가지 이런것들이 왜 필요한지 알게 ...</span>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article> 
+        <div class="title">
+          <h3>이번주 좋아요 ❤️‍🔥</h3>
+          <time>25.12.02</time>
+        </div>
+        <div id="ranking-likes">
+          
+          <div class="content">
+            <div class="img"></div>
+            <div class="body">
+              <div class="title">
+                <div class="profile"></div>
+                <span>뿌슝 피슝 빠슝</span>
+                <div>지식</div>
+              </div>
+              <span>신입사원을 위한 AI 활용법 3가지 이런것들이 왜 필요한지 알게 ...</span>
+            </div>
+          </div>
+          <div class="content">
+            <div class="img"></div>
+            <div class="body">
+              <div class="title">
+                <div class="profile"></div>
+                <span>뿌슝 피슝 빠슝</span>
+                <div>지식</div>
+              </div>
+              <span>신입사원을 위한 AI 활용법 3가지 이런것들이 왜 필요한지 알게 ...</span>
+            </div>
+          </div>
+          <div class="content">
+            <div class="img"></div>
+            <div class="body">
+              <div class="title">
+                <div class="profile"></div>
+                <span>뿌슝 피슝 빠슝</span>
+                <div>지식</div>
+              </div>
+              <span>신입사원을 위한 AI 활용법 3가지 이런것들이 왜 필요한지 알게 ...</span>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="quiz">
+        <div class="title">
+          <div>
+            <h3>오늘의 퀴즈 🔥</h3>
+            <time>25.12.02</time>
+          </div>
+          <span id="quiz-progress">1/10</span>
+        </div>
+        <span id="quiz-question">1. 웹사이트 악성 스크립트 삽입 공격은?</span>
+        <ul id="quiz-options-container">
+          <li>DDoS</li>
+          <li>DDoS</li>
+          <li>DDoS</li>
+          <li>DDoS</li>
+        </ul>
+        <div id="quiz-feedback" style="margin-top:10px; font-weight:bold; font-size:14px;"></div>
+        <button id="btn-next-quiz" style="display:none; width:100%; padding:10px; border:none; border-radius:6px; color:white; cursor:pointer; font-weight:bold;">
+            다음 문제
+        </button>
+      </article>
+    </section>
+  </main>
+
+  <script src="../js/shared/supabaseClient.js"></script>
+  <script src="../js/main/auth.js"></script>
+  <script src="../js/main/ranking.js"></script>
+  <script src="../js/qna/details/comments.js"></script>
+  <script src="../js/qna/details/init.js"></script>
+  <script src="../js/main/quiz.js"></script>
+  <script src="../js/utils/view.js"></script>
+  <script src="../js/utils/heart.js"></script>
+  <script src="../js/utils/comment.js"></script>
+</body>
+</html>

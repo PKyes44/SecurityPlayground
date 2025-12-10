@@ -1,0 +1,194 @@
+.main {
+    width: 100%;    
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.main > article img {
+    width: 10%;
+}
+
+.main > article {
+    padding: 20px;
+    color: #919BB1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+.main > article > .article-info > span.tag {
+    border: 1px solid #f6f6f6;
+    border-radius: 8px;
+    padding: 5px 25px;
+}
+.main > article > .title > span {
+    color: black;
+    font-size: 28px;
+}
+.main > article > .title > .info {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: center;
+}
+.main > article > .title > .info > span.nickname {
+    text-align: center;
+    color: black;
+}
+.main > article > .title > .info > img {
+    width: 4%;
+}
+.main > article > .title > .info > .views {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+}
+.main > article > .title > .info > .views > img {
+    width: 25%;
+    object-fit: contain;
+}
+.main > article > .title > .info > .buttons {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+    width: 20%;
+}
+.main > article > .title > .info > .buttons > div {
+    border: 1px solid #f6f6f6;
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 8px;
+}
+.main > article > .title > .info > .buttons > div > img {
+    width: 20%;
+    object-fit: contain;
+}
+.main > article hr {
+    border: 0.5px solid #f6f6f6;
+}
+.main > article > .others {
+    width: 10%;
+    display: flex;
+    flex-direction: row; 
+    margin-left: auto;  
+}
+.main > article > .others > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+}
+.main > article > .others > div > span {
+    font-size: 12px;
+}
+.main > article > .others > div > img {
+    width: 25%;
+}
+
+.main > .comment-area > span {
+    color: black;
+}
+.main > .comment-area > .comment-wrapper {
+    box-shadow: 0px 7px 30px 10px rgba(50, 111, 156, 0.1);
+    border-radius: 10px;
+}
+.main > .comment-area > .comment-wrapper > textarea {
+    resize: none;
+    width: 100%;
+    border: 0px;
+    padding: 10px;
+    font-family: 'BM JUA_OTF', 'Noto Sans KR', sans-serif;   
+}
+.main > .comment-area > .comment-wrapper > .comment-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+.main > .comment-area > .comment-wrapper > .comment-bar > img {
+    width: 40%;
+}
+.main > .comment-area > .comment-wrapper > .comment-bar > button {
+    background: #326F9C;
+    border: 0px;
+    color: white;
+    font-family: 'BM JUA_OTF', 'Noto Sans KR', sans-serif; 
+    font-weight: 100;
+    padding: 5px 15px;
+    border-radius: 8px;
+}
+
+.main > .comment-area > ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.main > .comment-area > ul li {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.main > .comment-area > ul li > .author {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: center;
+    color: black;
+}
+.main > .comment-area > ul li > .author > img.profile {
+    width: 5%;
+    background: #919BB1;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+.main > .comment-area > ul li > .author > .info {
+    display: flex;
+    flex-direction: column;
+}
+.main > .comment-area > ul li > .author > .info > time {
+    color: #919bB1;
+    font-size: 10px;
+}
+.main > .comment-area > ul li > .author > img.others {
+    width: 2%;
+    margin-left: auto;
+}
+.main > .comment-area > ul li > span.content {
+    color: black;
+}
+.main > .comment-area > ul li span {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.main > .comment-area ul > li form {
+    display: grid;
+    grid-template-columns: 9.5fr 0.5fr;
+    gap: 5px;
+}
+.main > .comment-area ul > li form > input {
+    width: 100%;
+    border: 1px solid #919BB1;
+    border-radius: 3px;
+    font-family: 'BM JUA_OTF', 'Noto Sans KR', sans-serif;
+    padding: 10px;
+}
+.main > .comment-area ul > li form > button {
+    background: #326F9C;
+    color: white;
+    border: 0px;
+    font-family: 'BM JUA_OTF', 'Noto Sans KR', sans-serif;
+    border-radius: 3px;
+}

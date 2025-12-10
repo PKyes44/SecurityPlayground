@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self'; 
+               script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; 
+               img-src 'self' data: https: https://images.unsplash.com https://t1.kakaocdn.net https://static.nid.naver.com https://www.gstatic.com https://upload.wikimedia.org https://github.githubassets.com; 
+               style-src 'self' 'unsafe-inline'; 
+               connect-src 'self' https://*.supabase.co;">
+    
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>로그인 - 보안센터</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="site-header">
+            <img src="./image/logo.png" alt="蹂댁븞??댄꽣 濡쒓퀬" class="site-logo">
+            <h1 class="site-name">
+                <img src="./image/logo_name.png" style="width: 150px;" alt="蹂댁븞??댄꽣">
+            </h1>
+            
+            <!-- [복구] 한글이 깨질 때 주 폰트로 변경 (Jua 폰트 적용) -->
+            <p class="welcome-message">
+                <span style="font-size: x-large; letter-spacing: -1px; font-weight: normal;">보안센터에 오신 것을 환영합니다</span>
+                <span>보안센터에서 보안 소식을<br>함께 나누는 커뮤니티 플레이그라운드입니다</span>
+            </p>
+            
+        </div>
+
+        <a onclick="handleSocial('kakao')" class="social-btn kakao">
+            <img src="./image/kakao.png" alt="Kakao"> 카카오로 로그인
+        </a>
+        <a onclick="handleSocial('google')" class="social-btn google">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"> 구글로 로그인
+        </a>
+        <a onclick="handleSocial('github')" class="social-btn github">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"> GitHub로 로그인
+        </a>
+    </div>
+
+<script src="js/shared/supabaseClient.js"></script>
+<script src="js/login/auth.js"></script>
+<script src="js/login/init.js"></script>
+
+</body>
+</html>
+

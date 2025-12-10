@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보안놀이터</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/snb2.css">
+    <link rel="stylesheet" href="../css/news-detail.css">
+    <link rel="stylesheet" href="../css/news-detail-side.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../imgs/Logo.png" alt="보안놀이터" />
+      <span>보안놀이터</span>
+    </div>
+    <div class="search-background">
+        <input type="text">
+        <img src="../imgs/Search.png" alt="검색아이콘">
+    </div>
+    <div class="buttons">
+      <div class="add-article-background">
+          <img src="../imgs/Plus.png" alt="게시판추가">
+          <img src="../imgs/ArrowDown.png" alt="">
+      </div>
+      <div class="bookmark-background">
+          <img src="../imgs/Bookmark.png" alt="북마크">
+      </div>
+      <div class="notification-background">
+          <img src="../imgs/Bell.png" alt="알림">
+      </div>
+      <div id="user-profile-area">
+        <img class="profile" id="my-avatar"></img>
+        <!-- <span id="my-nickname">닉네임</span> -->
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="snb">
+      <article class="menu">
+        <div>
+          <img id="heart-button" src="../imgs/EmptyHeart.png" alt="">
+          <span id="heart-count">12</span>
+        </div>
+        <div>
+          <img src="../imgs/EmptyBookmark.png" alt="">
+          <span>스크랩</span>
+        </div>
+        <div>
+          <img src="../imgs/EmptyComment.png" alt="">
+          <span>12</span>
+        </div>  
+      </article>
+    </section>
+    <section class="main">
+      <time id="date">2025년 12월 4일</time>
+      <h1 id="title" class="title">
+        C# .NET에서 XML을 PDF로 변환하는 방법: 
+        <br>Spire.Doc for .NET과 함께
+        <span class="type">지식</span>
+      </h1>
+      <article>
+        <img id="news-img" src="../imgs/news-banner.png" alt="">
+        <div id="content">
+          <h2>1. 왜 C# .NET에서 XML을 PDF로 변환해야 하는가?</h2>
+          <p>데이터 교환과 리포트 생성에 있어 XML과 PDF는 각각 고유한 중요성을 가집니다. XML은 구조화된 데이터를 표현하고 교환하는데 탁월하며, PDF는 다양한 장치에서 일관된 포맷으로 문서를 공유하고 인쇄하는 데 이상적입니다. 그러나 C# .NET 개발자들은 복잡한 XML 데이터를 PDF로 변환할 때 포맷팅, 스타일 제어, 레이아웃 유지 등 여러 문제에 직면하곤 합니다. <br><br> 이러한 어려움을 해결하기 위해 이 글에서는 C# .NET 환경에서 XML을 PDF로 효율적이고 간편하게 변환하는 방법을 심층적으로 다룰 것입니다. 특히, 강력한 문서 처리 라이브러리인 Spire.Doc for .NET을 활용하여 이러한 변환 작업을 단순화하는 실용적인 솔루션을 제공합니다. 이 글을 통해 여러분은 XML 데이터를 전문적인 PDF 문서로 변환하는 데 필요한 모든 지식과 코드를 얻게 될 것입니다.</p>
+          <h2>2. Spire.Doc for .NET 소개</h2>
+        </div>
+      </article>
+    </section>
+    <section class="sideboard">
+      <article>
+        <div class="title">
+          <img src="../imgs/profileimg.png" alt="">
+          <div>
+            <span id="nickname" class="nickname">뿌슝 피슝 빠슝</span>
+            <div>
+              <span class="follower">팔로워: <span id="follower-cnt"></span></span>
+              <span class="following">팔로잉: <span id="following-cnt"></span></span>
+            </div>
+          </div>
+          <img class="rounded-plus" src="../imgs/RoundedPlus.png" alt="">
+        </div>
+        <div class="content">
+          <span class="intro">소개</span>
+          <span class="body" id="intro-body">만나서 반갑게 되었습니다</span>
+        </div>
+        <span class="goto-profile">프로필 살펴보기</span>
+      </article>
+    </section>
+  </main>
+  
+  <script src="../js/shared/supabaseClient.js"></script>
+  <script src="../js/news-details/init.js"></script>
+  <script src="../js/main/auth.js"></script>
+  <script src="../js/news-details/news.js"></script>
+</body>
+</html>

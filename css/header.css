@@ -1,0 +1,80 @@
+header {
+    height: 100px;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 30px;
+    column-gap: 50px;
+    justify-content: space-between;
+}
+header > .logo {
+    display: flex;
+    flex: row;
+    justify-content: start;
+    align-items: center;
+    color: #346BA2;
+    column-gap: 20px;
+}
+header > .logo > span {
+    font-size: 33px;
+}
+header > .logo > img {
+    margin: -10px 0px 0px 0px;
+}
+header > .search-background {
+    width: 700px;
+    margin-left: 100px;
+    height: 44px;
+    border-radius: 8px;
+    border: 0px;
+    background: #F5F7F9;
+    position: relative;
+}
+header > .search-background > input {
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    background: transparent;
+}
+header > .search-background > img {
+    position: absolute;
+    left: 18px;      
+    top: calc(100% / 2 - 9px);
+}
+header > .buttons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 18px;
+}
+header > .buttons > .add-article-background {
+    background: #326F9C;
+    border-radius: 8px;
+    width: 60px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 13px;
+}
+header > .buttons >.bookmark-background, header > .buttons >.notification-background { 
+    background: #F5F7F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+}
+header > .buttons > #user-profile-area > #my-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%; 
+    background: #F5F7F9;
+    margin-right: 5px;
+}
+header > .buttons > #user-profile-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

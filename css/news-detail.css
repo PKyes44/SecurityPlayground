@@ -1,0 +1,42 @@
+.main {
+    width: 100%;    
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 8px;
+}
+.main > time {
+    color: #919BB1;
+}
+.main > h1 {
+    font-weight: 100;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.main > h1 > span {
+    margin-left: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: -1px 7px 20px rgba(50, 111, 156, 0.1);
+    padding: 2px 12px;
+    color: #919BB1;
+    font-size: 14px;
+}
+.main > article {
+    background: white;
+    min-height: calc(100vh - 100px - 40px - 75px);
+}
+.main > article > img {
+    width: 100%;
+}
+.main > article > div {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.main > article > div > h2 {
+    font-weight: 100;
+}
+.main > article > div > p {
+    color: #919BB1;
+}

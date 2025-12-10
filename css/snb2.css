@@ -1,0 +1,33 @@
+.snb hr {
+    background-color: #F5F7F9;
+    color: #F5F7F9;
+    border: 1px solid #F5F7F9;
+}
+.snb {
+    background-color: white;
+    border-top: 1px solid #F5F7F9; 
+    height: auto;
+    display: flex;
+    width: 70px;
+    flex-direction: row;
+    font-size: 18px;
+}
+.snb > .menu {
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+}
+.snb > .menu > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 0px 20px;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+}
+.snb > .menu > div > img {
+    width: 100%;
+}

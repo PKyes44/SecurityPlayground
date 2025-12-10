@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point-X - Security Playground</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <img src="./image/logo.png" alt="Point-X" class="header-logo-img" onerror="this.src='https://via.placeholder.com/40?text=P'">
+            <span>보안놀이터</span>
+        </div>
+        <div class="search-bar">
+        <i id="main-search-icon" class="fa-solid fa-magnifying-glass" style="cursor:pointer;" onclick="performSearch()"></i>
+        <input id="main-search-input" type="text" placeholder="검색어를 입력하세요" onkeypress="if(event.key === 'Enter') performSearch()">
+        </div>
+
+        <div class="header-right" style="display: flex; align-items: center; gap: 15px;">
+            <i class="fa-regular fa-pen-to-square header-icon-btn" title="질문 작성" onclick="requireLogin(() => location.href='questions.html')"></i>
+            <i class="fa-regular fa-bookmark header-icon-btn" title="북마크"></i>
+            <i class="fa-regular fa-bell header-icon-btn" title="알림"></i>
+            
+            <div class="header-divider"></div>
+
+            <button id="login-btn" class="login-btn" onclick="goToLogin()">로그인</button>
+            
+            <div id="user-profile-area" style="display: none; align-items: center; gap: 10px; cursor: pointer;">
+                <img id="my-avatar" src="" alt="내 아바타" style="width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--primary-blue); object-fit: cover;">
+                <span id="my-nickname" style="font-weight: 700;"></span>
+                
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="far-left-sidebar">
+            <div style="font-size: 12px; font-weight: 700; margin-bottom: 15px; color: var(--text-gray);">팔로잉</div>
+            <img src="https://placehold.co/45x45/ffb7b2/ffffff?text=U1" class="followed-avatar-item" title="팔로워 1">
+            <img src="https://placehold.co/45x45/a29bfe/ffffff?text=U2" class="followed-avatar-item" title="팔로워 2">
+            <img src="https://placehold.co/45x45/74b9ff/ffffff?text=U3" class="followed-avatar-item" title="팔로워 3">
+            <div style="width: 35px; height: 35px; background: #F0F2F5; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #A0AEC0;">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+        </nav>
+
+        <nav class="main-menu-sidebar">
+            <ul style="list-style: none;">
+                <li class="menu-item active"><i class="fa-solid fa-house"></i> 홈</li>
+                <li class="menu-item"><i class="fa-solid fa-book-bookmark"></i> 내 북마크</li>
+                <li class="menu-item" onclick="requireLogin(() => location.href='profile.html')">
+                    <i class="fa-solid fa-user"></i> 내 프로필
+                </li>
+            </ul>
+
+            <div style="margin-top: 30px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--text-gray); margin-bottom: 10px;">게시판 바로가기</div>
+                <div class="board-menu">
+                    <div class="board-item"><img src="./image/Qna_log.png" class="board-icon-img" onerror="this.src='https://via.placeholder.com/20?text=Q'"> QnA</div>
+                    <div class="board-item"><img src="./image/jisic_log.png" class="board-icon-img" onerror="this.src='https://via.placeholder.com/20?text=K'"> 지식 공유</div>
+                    <div class="board-item"><img src="./image/jayu_log.png" class="board-icon-img" onerror="this.src='https://via.placeholder.com/20?text=F'"> 자유 게시판</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid #E2E8F0;">
+                <li class="menu-item"><i class="fa-solid fa-gear"></i> 설정</li>
+            </div>
+        </nav>
+
+        <div class="content-area">
+            <main class="main-content">
+                <div class="dashboard-cards">
+                    <div class="card-top">
+                        <div class="card-icon-title">
+                            <div class="icon-box" style="background: #E53E3E;">Q</div>
+                            <span style="color: #E53E3E;">QnA</span>
+                        </div>
+                        <div class="card-desc">보안 관련 궁금한 점을<br>함께 질문하고 답변해보세요</div>
+                    </div>
+                    <div class="card-top">
+                        <div class="card-icon-title">
+                            <div class="icon-box" style="background: #D69E2E;">K</div>
+                            <span style="color: #D69E2E;">지식</span>
+                        </div>
+                        <div class="card-desc">배운 보안 지식과 노하우를<br>간단한 글로 공유하세요</div>
+                    </div>
+                    <div class="card-top">
+                        <div class="card-icon-title">
+                            <div class="icon-box" style="background: #38A169;">F</div>
+                            <span style="color: #38A169;">자유</span>
+                        </div>
+                        <div class="card-desc">잡담부터 커뮤니티 소식까지<br>자유롭게 이야기 나눠보세요</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 15px; font-size: 18px; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-regular fa-newspaper"></i> 오늘의 보안 뉴스
+                </h3>
+                <div id="news-container">
+                    <p style="text-align: center; padding: 20px; color: #A0AEC0;">뉴스를 불러오는 중입니다...</p>
+                </div>
+            </main>
+
+            <aside class="sidebar-right">
+                
+                <div class="widget">
+                    <div class="widget-header">
+                        <span>보안 퀴즈</span>
+                        <span id="quiz-progress" style="font-size:12px; color:var(--primary-blue); font-weight:normal;"></span>
+                    </div>
+                    <div class="quiz-box">
+                        <div id="quiz-content">
+                            <p id="quiz-question" class="quiz-question">문제를 불러오는 중...</p>
+                            <div id="quiz-options-container"></div>
+                            <div id="quiz-feedback" style="margin-top:10px; font-weight:bold; font-size:14px;"></div>
+                            <button id="btn-next-quiz" style="display:none; margin-top:15px; width:100%; padding:10px; background:var(--primary-blue); border:none; border-radius:6px; color:white; cursor:pointer; font-weight:bold;">
+                                다음 문제 <i class="fas fa-arrow-right" style="margin-left:5px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <div class="widget-header">조회수 랭킹</div>
+                    <div id="ranking-views" class="rank-list">
+                        <div style="text-align:center; padding:10px; color:#A0AEC0;">데이터를 불러오는 중...</div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <div class="widget-header">좋아요 랭킹</div>
+                    <div id="ranking-likes" class="rank-list">
+                         <div style="text-align:center; padding:10px; color:#A0AEC0;">데이터를 불러오는 중...</div>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </div>
+
+    <div id="news-modal" class="modal">
+        <div class="modal-content" style="max-width: 700px;">
+            <span class="modal-close" onclick="closeNewsModal()">&times;</span>
+            <img id="modal-img" src="" style="width:100%; height:300px; object-fit:cover; border-radius:8px; margin-bottom:20px;">
+            <div id="modal-date" style="font-size:13px; color:#A0AEC0; margin-bottom:10px;"></div>
+            <h2 id="modal-title" style="font-size:22px; font-weight:800; margin-bottom:20px; line-height:1.4;"></h2>
+            <div id="modal-body" style="font-size:16px; line-height:1.7; color:#4A5568;"></div>
+        </div>
+    </div>
+
+    <div id="login-req-modal" class="modal">
+        <div class="login-alert-content">
+            <span class="modal-close" onclick="closeLoginModal()" style="top: 15px; right: 15px; font-size: 24px;">&times;</span>
+            
+            <div class="login-alert-icon">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="login-alert-title">로그인이 필요합니다</div>
+            <div class="login-alert-desc">
+                회원만 이용할 수 있는 기능입니다.<br>로그인 후 다시 시도해주세요.
+            </div>
+            <button class="btn-confirm-login" onclick="goToLogin()">로그인하러 가기</button>
+        </div>
+    </div>
+
+    <script src="js/shared/supabaseClient.js"></script>
+    <script src="js/main/auth.js"></script>
+    <script src="js/main/news.js"></script>
+    <script src="js/main/quiz.js"></script>
+    <script src="js/main/ranking.js"></script>
+    <script src="js/main/search.js"></script>
+    <script src="js/main/init.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+.snb hr {
+    background-color: #F5F7F9;
+    color: #F5F7F9;
+    border: 1px solid #F5F7F9;
+}
+.snb {
+    background-color: white;
+    border-top: 1px solid #F5F7F9;  
+    width: 320px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+}
+.snb > .followers {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 15px;
+    border-right: 1px solid #F5F7F9;
+}
+.snb > .followers > .follower {
+    background: #F5F7F9;
+    width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+}
+
+.snb > .sidebar {
+    padding: 0px 10px;
+    padding-top: 40px;
+}
+.snb > .sidebar > .pages {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #919BB1;
+}
+.snb > .sidebar > .pages > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding-left: 18px;
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+}
+.snb > .sidebar > .pages > div > img {
+    margin-right: 18px;
+}
+.snb > .sidebar > .pages > .active {
+    color: #346BA2;
+    background: #EBF1F6;
+}
+
+.snb > .sidebar {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+}
+.snb > .sidebar > .article-shortcut {
+    padding-left: 5px;
+}
+.snb > .sidebar > .article-shortcut >  .title > img {
+    width: 10%;
+    height: auto;
+}
+.snb > .sidebar > .article-shortcut >  .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    column-gap: 15px;
+    margin-bottom: 20px;
+}
+.snb > .sidebar > .article-shortcut > .shortcut-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+    color: #919BB1;
+    margin-left: 25px;
+    position: relative;
+}
+.snb > .sidebar > .article-shortcut > .shortcut-list > span {
+    position: relative;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.snb > .sidebar > .article-shortcut > .shortcut-list > span::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    background: #919BB1;
+    left: -30px;
+    top: calc(25px / 2);
+}
+.snb > .sidebar > .article-shortcut > .shortcut-list::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 122px;
+    background: #919BB1;
+    left: 0px;
+    top: calc(25px / 2);
+}
+
+.snb > .sidebar > .setting {
+    color: #919BB1;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    column-gap: 15px; 
+    padding-left: 5px;
+}
+.snb > .sidebar > .setting > img {
+    width: 10%;
+    height: auto;
+}
