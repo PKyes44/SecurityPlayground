@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필 설정</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <div class="container">
+        <h2>프로필 설정</h2>
+        
+        <div class="profile-img-box">
+            <img id="avatarPreview" 
+                 src="https://via.placeholder.com/100?text=User" 
+                 class="avatar" 
+                 onerror="this.onerror=null; this.src='https://via.placeholder.com/100?text=Error';">
+            
+            <label for="fileInput" class="camera-btn">수정</label>
+            <input type="file" id="fileInput" accept="image/*" style="display:none">
+        </div>
+
+        <label>이메일</label>
+        <input type="text" id="email" readonly style="background:#f9f9f9; color:#888;">
+        
+        <label>닉네임</label>
+        <input type="text" id="nickname" placeholder="닉네임(2글자 이상)">
+        
+        <label>자기소개</label>
+        <textarea id="intro" rows="3" placeholder="자기소개를 작성해주세요"></textarea>
+        
+        <button id="saveBtn" class="save-btn">저장하기</button>
+        
+        <a href="main.html" class="back-link">메인으로 돌아가기</a>
+    </div>
+
+    <script src="js/shared/supabaseClient.js"></script>
+<script src="js/profile/profile.js"></script>
+</body>
+</html>
