@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/snb2.css">
     <link rel="stylesheet" href="../css/create-board.css">
+    <link rel="stylesheet" href="../css/notifiction.css">
 </head>
 <body>
   <header>
@@ -31,7 +32,7 @@
       <div class="bookmark-background">
           <img src="../imgs/Bookmark.png" alt="북마크">
       </div>
-      <div class="notification-background">
+      <div id="alarm-button" class="notification-background">
           <img src="../imgs/Bell.png" alt="알림">
       </div>
       <div class="profile"></div>
@@ -83,6 +84,15 @@
       </form>
     </section>
   </main>
+<div id="notification-list-modal" class="noti-list-modal hidden">
+  <div class="noti-list-box">
+    <h3>알림</h3>
+    <div id="noti-list"></div>
+    <button id="close-noti-list">닫기</button>
+  </div>
+</div>
+  
+<script type="module" src="../js/profile/notification.js"></script>
   <script src="../js/shared/supabaseClient.js"></script>
   <script src="../js/create/article.js"></script>
 </body>

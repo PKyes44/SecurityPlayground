@@ -179,7 +179,7 @@ const bindUploadCommentEvent = async () => {
       author: uid,
       content,
     };
-    
+    console.log("Insert Data: ", insertData);
     
     const { error: insertError } = await sb
     .from("comments")
