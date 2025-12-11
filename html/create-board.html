@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/snb2.css">
-    <link rel="stylesheet" href="../css/news-detail.css">
-    <link rel="stylesheet" href="../css/knowledge-detail-side.css">
+    <link rel="stylesheet" href="../css/create-board.css">
 </head>
 <body>
   <header>
@@ -35,21 +34,19 @@
       <div class="notification-background">
           <img src="../imgs/Bell.png" alt="알림">
       </div>
-      <div id="user-profile-area">
-        <img class="profile" id="my-avatar"></img>
-      </div>
+      <div class="profile"></div>
     </div>
   </header>
   <main>
     <section class="snb">
       <article class="menu">
         <div>
-          <img id="heart-button" src="../imgs/EmptyHeart.png" alt="">
-          <span id="heart-count">12</span>
+          <img src="../imgs/EmptyHeart.png" alt="">
+          <span>12</span>
         </div>
         <div>
-          <img src="../imgs/EmptyBookmark.png" alt="">
-          <span>스크랩</span>
+          <img src="../imgs/EmptyView.png" alt="">
+          <span>12</span>
         </div>
         <div>
           <img src="../imgs/EmptyComment.png" alt="">
@@ -58,41 +55,35 @@
       </article>
     </section>
     <section class="main">
-      <time id="date">2025년 12월 4일</time>
-      <h1 id="title" class="title">
-      </h1>
-      <article>
-        <img id="banner-img" src="../imgs/news-banner.png" alt="">
-        <div id="content">
+      <form>
+        <div class="title-wrapper">
+          <span>제목</span>
+          <input id="title" type="text" class="title">
         </div>
-      </article>
-    </section>
-    <section class="sideboard">
-      <article>
-        <div class="title">
-          <img id="profile-img" src="../imgs/profileimg.png" alt="">
+        <div class="tag-wrapper">
+          <span>태그</span>
+          <ul>
+            <li>QnA</li>
+            <li>지식</li>
+            <li>자유</li>
+          </ul>
+        </div>
+        <div class="content-wrapper">
+          <span>본문</span>
           <div>
-            <span id="nickname" class="nickname"></span>
-            <div>
-              <span class="follower">팔로워: <span id="follower-cnt"></span></span>
-              <span class="following">팔로잉: <span id="following-cnt"></span></span>
-            </div>
+            <img src="../imgs/Editor.png" alt="">
+            <textarea name="content" id="content" placeholder="내용을 입력해주세요"></textarea>
           </div>
-          <img id="follow-button" style="cursor: pointer;" class="rounded-plus" src="../imgs/RoundedPlus.png" alt="">
         </div>
-        <div class="content">
-          <span class="intro">소개</span>
-          <span class="body" id="intro-body"></span>
+
+        <div class="buttons">
+          <span class="save" onclick="saveArticle()" type="submit">저장</span>
+          <span class="cancel">취소</span>
         </div>
-        <span class="goto-profile">프로필 살펴보기</span>
-      </article>
+      </form>
     </section>
   </main>
-  
-  <script src="../js/utils/view.js"></script>
-  <script src="../js/utils/heart.js"></script>
   <script src="../js/shared/supabaseClient.js"></script>
-  <script src="../js/knowledge/details/init.js"></script>
-  <script src="../js/main/auth.js"></script>
+  <script src="../js/create/article.js"></script>
 </body>
 </html>

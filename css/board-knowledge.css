@@ -1,3 +1,4 @@
+
 .main {
     width: 100%;    
     margin-top: 40px;
@@ -70,6 +71,7 @@
 .main .articles article .img {
     aspect-ratio: 4/3;
     width: 20%;
+    background-size: contain;
     /* background-color: #919BB1; */
 }
 .main .articles article .img > img {

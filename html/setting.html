@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보안놀이터</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/snb.css">
+    <link rel="stylesheet" href="../css/setting.css">
+    <link rel="stylesheet" href="../css/sideboard.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../imgs/Logo.png" alt="보안놀이터" />
+      <span>보안놀이터</span>
+    </div>
+    <div class="search-background">
+        <input type="text">
+        <img src="../imgs/Search.png" alt="검색아이콘">
+    </div>
+    <div class="buttons">
+      <div class="add-article-background">
+          <img src="../imgs/Plus.png" alt="게시판추가">
+          <img src="../imgs/ArrowDown.png" alt="">
+      </div>
+      <div class="bookmark-background">
+          <img src="../imgs/Bookmark.png" alt="북마크">
+      </div>
+      <div class="notification-background">
+          <img src="../imgs/Bell.png" alt="알림">
+      </div>
+      <div class="profile"></div>
+    </div>
+  </header>
+  <main>
+    <section class="snb">
+      <!-- Followers -->
+      <article class="followers">
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+      </article>
+      <!-- sidebar -->
+      <article class="sidebar">
+        <div class="pages">
+          <div class="home " onclick="{window.location.href='/'}">
+            <img src="../imgs/Home.png" alt="Home">
+            <span>홈</span>
+          </div>
+          <div class="my-scrap" onclick="{window.location.href='/html/scrap-knowledge.html'}">
+            <img src="../imgs/Scrap.png" alt="Scrap">
+            <span>마이 스크랩 북</span>
+          </div>
+          <div class="my-page" onclick="{window.location.href='/html/mypage-knowledge.html'}">
+            <img src="../imgs/MyPage.png" alt="MyPage">
+            <span>마이 페이지</span>
+          </div>
+        </div>
+        <hr>
+        <div class="article-shortcut">
+          <div class="title">
+            <img src="../imgs/Check.png" alt="">
+            <span>게시판 바로가기</span>
+          </div>
+          <div class="shortcut-list">
+            <span>
+              QNA 🙋
+            </span>
+            <span>
+              지식 💡
+            </span>
+            <span>
+              자유 👥
+            </span>
+          </div>
+        </div>
+        <hr>
+        <div class="setting active" style="color: #326F9C;
+    background: #EBF1F6; 
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding-left: 18px;
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;">
+          <img src="../imgs/ActiveSetting.png" alt="">
+          <span>설정하기</span>
+        </span>
+      </article>
+    </section>
+    <section class="main">
+      <article>
+        <div class="settings">
+          <form class="infos">
+            <h1>회원 정보</h1>
+            <div>
+              <label for="nickname">닉네임</label>
+              <input type="text" id="nickname">
+            </div>
+            <div>
+              <label for="email">이메일</label>
+              <input type="text" id="email">
+            </div>
+            <div>
+              <label for="intro">한 줄 소개</label>
+              <textarea type="text" id="intro"></textarea>
+            </div>
+            
+          </form>
+          <div class="noti-settings">
+            <h6>알림 설정</h6>
+            <div>
+              <span>좋아요</span>
+              <div class="toggle on">
+              </div>
+            </div>
+            <div>
+              <span>댓글</span>
+              <div class="toggle on">
+              </div>
+            </div>
+            <div>
+              <span>대댓글</span>
+              <div class="toggle off">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profiles">
+          <div class="profile-img">
+            <img src="../imgs/profileimg.png" alt="profile-img">
+          </div>
+          <div class="follow">
+            <div>
+              <h6>팔로워 표시</h6>
+              <div class="toggle off">
+              </div>
+            </div>
+            <div>
+              <h6>팔로잉 표시</h6>
+              <div class="toggle off">
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="save-profile" type="button" onclick="updateProfile()">저장</button>
+      </article>
+    </section>
+  </main>
+
+  <script src="../js/shared/supabaseClient.js"></script>
+  <script src="../js/profile/update.js"></script>
+</body>
+</html>

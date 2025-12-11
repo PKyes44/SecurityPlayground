@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보안놀이터</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/snb.css">
+    <link rel="stylesheet" href="../css/mypage-knowledge.css">
+    <link rel="stylesheet" href="../css/sideboard.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../imgs/Logo.png" alt="보안놀이터" />
+      <span>보안놀이터</span>
+    </div>
+    <div class="search-background">
+        <input type="text">
+        <img src="../imgs/Search.png" alt="검색아이콘">
+    </div>
+    <div class="buttons">
+      <div class="add-article-background">
+          <img src="../imgs/Plus.png" alt="게시판추가">
+          <img src="../imgs/ArrowDown.png" alt="">
+      </div>
+      <div class="bookmark-background">
+          <img src="../imgs/Bookmark.png" alt="북마크">
+      </div>
+      <div class="notification-background">
+          <img src="../imgs/Bell.png" alt="알림">
+      </div>
+      <div class="profile"></div>
+    </div>
+  </header>
+  <main>
+    <section class="snb">
+      <!-- Followers -->
+      <ul class="followers following-list">
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+        <div class="follower"></div>
+      </ul>
+      <!-- sidebar -->
+      <article class="sidebar">
+        <div class="pages">
+          <div class="home ">
+            <img src="../imgs/Home.png" alt="Home">
+            <span>홈</span>
+          </div>
+          <div class="my-scrap active">
+            <img src="../imgs/ActiveScrap.png" alt="Scrap">
+            <span>마이 스크랩 북</span>
+          </div>
+          <div class="my-page ">
+            <img src="../imgs/scrap.png" alt="scrap">
+            <span>마이 페이지</span>
+          </div>
+        </div>
+        <hr>
+        <div class="article-shortcut">
+          <div class="title">
+            <img src="../imgs/Check.png" alt="">
+            <span>게시판 바로가기</span>
+          </div>
+          <div class="shortcut-list">
+            <span>
+              QNA 🙋
+            </span>
+            <span>
+              지식 💡
+            </span>
+            <span>
+              자유 👥
+            </span>
+          </div>
+        </div>
+        <hr>
+        <div class="setting">
+          <img src="../imgs/Setting.png" alt="">
+          <span>설정하기</span>
+        </span>
+      </article>
+    </section>
+    <section class="main">
+      <article>
+        <div class="top-wrapper">
+          <article>
+            <div class="profile">
+              <div class="infos">
+                <h1 id="nickname"></h1>
+                <div></div>
+                <span id="follower-count"></span>
+                <span id="following-count"></span>
+              </div>
+              <span id="intro" class="intro"></span>
+            </div>
+          </article>
+          <div class="profile-img">
+            <div class="setting">
+              <img src="imgs/Setting.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="articles">
+          <img src="../imgs/Tab2.png" alt="">
+          <ul class="category">
+            <li class="inactive" onclick="{window.location.href='/html/scrap-qna.html'}">QnA</li>
+            <li class="active" onclick="{window.location.href='/html/scrap-knowledge.html'}">지식</li>
+            <li class="inactive" onclick="{window.location.href='/html/scrap-normal.html'}">자유</li>
+          </ul>
+          <ul class="article-list">
+          </ul>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="../js/shared/supabaseClient.js"></script>
+  <script src="../js/scrap/knowledge.js"></script>
+  <script src="../js/profile/follow.js"></script>
+</body>
+</html>

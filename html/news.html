@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/sideboard.css">
 </head>
 <body>
+  <div id="notification-list"></div>
   <header>
     <div class="logo">
       <img src="../imgs/Logo.png" alt="보안놀이터" />
@@ -25,7 +26,7 @@
         <img src="../imgs/Search.png" alt="검색아이콘">
     </div>
     <div class="buttons">
-      <div class="add-article-background">
+      <div onclick="{window.location.href='/html/create-board.html'}" class="add-article-background">
           <img src="../imgs/Plus.png" alt="게시판추가">
           <img src="../imgs/ArrowDown.png" alt="">
       </div>
@@ -44,7 +45,7 @@
   <main>
     <section class="snb">
       <!-- Followers -->
-      <article class="followers">
+      <ul class="followers following-list">
         <div class="follower"></div>
         <div class="follower"></div>
         <div class="follower"></div>
@@ -52,19 +53,19 @@
         <div class="follower"></div>
         <div class="follower"></div>
         <div class="follower"></div>
-      </article>
+      </ul>
       <!-- sidebar -->
       <article class="sidebar">
         <div class="pages">
           <div class="home active">
-            <img src="../imgs/Home.png" alt="Home">
+            <img src="../imgs/ActiveHome.png" alt="Home">
             <span>홈</span>
           </div>
-          <div class="my-scrap">
+          <div onclick="{window.location.href='/html/scrap-knowledge.html'}" class="my-scrap">
             <img src="../imgs/Scrap.png" alt="Scrap">
             <span>마이 스크랩 북</span>
           </div>
-          <div class="my-page">
+          <div onclick="{window.location.href='/html/mypage-knowledge.html'}" class="my-page">
             <img src="../imgs/MyPage.png" alt="MyPage">
             <span>마이 페이지</span>
           </div>
@@ -88,7 +89,7 @@
           </div>
         </div>
         <hr>
-        <div class="setting">
+        <div class="setting" onclick="{window.location.href='/html/setting.html'}">
           <img src="../imgs/Setting.png" alt="">
           <span>설정하기</span>
         </span>
@@ -129,32 +130,6 @@
       </div>
       <div class="articles" id="news-container">
         <hr>
-        <article>
-          <div class="img"></div>
-          <div>
-            <h6>국내 보안인 축제 한마당 시큐리티 페스타 2025 개최</h6>
-            <p>국내 보안 산업인의 축제 시큐리티 페스타 2025가 <br>주요 보안 기업인과 CISO, 유관 단체 등 300여명이 참석한 가운데 열렸다.</p>
-            <span>한세희 기자 | 2025년 12월 4일</span>
-          </div>
-        </article>
-        <hr>
-        <article>
-          <div class="img"></div>
-          <div>
-            <h6>국내 보안인 축제 한마당 시큐리티 페스타 2025 개최</h6>
-            <p>국내 보안 산업인의 축제 시큐리티 페스타 2025가 <br>주요 보안 기업인과 CISO, 유관 단체 등 300여명이 참석한 가운데 열렸다.</p>
-            <span>한세희 기자 | 2025년 12월 4일</span>
-          </div>
-        </article>
-        <hr>
-        <article>
-          <div class="img"></div>
-          <div>
-            <h6>국내 보안인 축제 한마당 시큐리티 페스타 2025 개최</h6>
-            <p>국내 보안 산업인의 축제 시큐리티 페스타 2025가 <br>주요 보안 기업인과 CISO, 유관 단체 등 300여명이 참석한 가운데 열렸다.</p>
-            <span>한세희 기자 | 2025년 12월 4일</span>
-          </div>
-        </article>
       </div>
     </section>
     <section class="sideboard">
@@ -164,39 +139,6 @@
           <time>25.12.02</time>
         </div>
         <div id="ranking-views">
-          <div class="content">
-            <div class="img"></div>
-            <div class="body">
-              <div class="title">
-                <div class="profile"></div>
-                <span>뿌슝 피슝 빠슝</span>
-                <div>지식</div>
-              </div>
-              <span>신입사원을 위한 AI 활용법 3가지 이런것들이 왜 필요한지 알게 ...</span>
-            </div>
-          </div>
-          <div class="content">
-            <div class="img"></div>
-            <div class="body">
-              <div class="title">
-                <div class="profile"></div>
-                <span>뿌슝 피슝 빠슝</span>
-                <div>지식</div>
-              </div>
-              <span>신입사원을 위한 AI 활용법 3가지 이런것들이 왜 필요한지 알게 ...</span>
-            </div>
-          </div>
-          <div class="content">
-            <div class="img"></div>
-            <div class="body">
-              <div class="title">
-                <div class="profile"></div>
-                <span>뿌슝 피슝 빠슝</span>
-                <div>지식</div>
-              </div>
-              <span>신입사원을 위한 AI 활용법 3가지 이런것들이 왜 필요한지 알게 ...</span>
-            </div>
-          </div>
         </div>
       </article>
       <article> 
@@ -206,39 +148,6 @@
         </div>
         <div id="ranking-likes">
           
-          <div class="content">
-            <div class="img"></div>
-            <div class="body">
-              <div class="title">
-                <div class="profile"></div>
-                <span>뿌슝 피슝 빠슝</span>
-                <div>지식</div>
-              </div>
-              <span>신입사원을 위한 AI 활용법 3가지 이런것들이 왜 필요한지 알게 ...</span>
-            </div>
-          </div>
-          <div class="content">
-            <div class="img"></div>
-            <div class="body">
-              <div class="title">
-                <div class="profile"></div>
-                <span>뿌슝 피슝 빠슝</span>
-                <div>지식</div>
-              </div>
-              <span>신입사원을 위한 AI 활용법 3가지 이런것들이 왜 필요한지 알게 ...</span>
-            </div>
-          </div>
-          <div class="content">
-            <div class="img"></div>
-            <div class="body">
-              <div class="title">
-                <div class="profile"></div>
-                <span>뿌슝 피슝 빠슝</span>
-                <div>지식</div>
-              </div>
-              <span>신입사원을 위한 AI 활용법 3가지 이런것들이 왜 필요한지 알게 ...</span>
-            </div>
-          </div>
         </div>
       </article>
       <article class="quiz">
@@ -249,12 +158,8 @@
           </div>
           <span id="quiz-progress">1/10</span>
         </div>
-        <span id="quiz-question">1. 웹사이트 악성 스크립트 삽입 공격은?</span>
+        <span id="quiz-question"></span>
         <ul id="quiz-options-container">
-          <li>DDoS</li>
-          <li>DDoS</li>
-          <li>DDoS</li>
-          <li>DDoS</li>
         </ul>
         <div id="quiz-feedback" style="margin-top:10px; font-weight:bold; font-size:14px;"></div>
         <button id="btn-next-quiz" style="display:none; width:100%; padding:10px; border:none; border-radius:6px; color:white; cursor:pointer; font-weight:bold;">
@@ -270,5 +175,6 @@
   <script src="../js/main/news.js"></script>
   <script src="../js/main/ranking.js"></script>
   <script src="../js/main/quiz.js"></script>
+  <script type="module" src="../js/profile/notification.js"></script>
 </body>
 </html>

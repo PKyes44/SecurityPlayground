@@ -60,7 +60,7 @@ async function checkRegisteredUser() {
 
   // profiles 테이블에 데이터가 존재하면(정상적으로 회원가입 완료된 유저)
   // 메인 페이지로 이동
-  window.location.href = '/html/main.html';
+  window.location.href = '/html/news.html';
 }
 
 // 전역(window)에서 함수에 접근할 수 있도록 바인딩

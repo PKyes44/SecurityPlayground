@@ -1,0 +1,124 @@
+body {
+  height: 100vh;
+}
+
+.main {
+  width: 100%;
+  padding: 40px 40px 0px 0px;
+}
+.main > article {
+  background: white;
+  width: 100%;
+  height: calc(100vh - 100px - 40px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 40px;
+  font-size: 20px;
+  color: #919BB1;
+}
+
+.main > article > .settings > .infos > h1 {
+  color: #326F9C;
+  font-weight: 100;
+  font-size: 28px;
+}
+.main > article > .settings,
+.main > article > .settings > .infos,
+.main > article > .settings > .noti-settings {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.main > article > .settings > .infos > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.main > article > .settings > .infos > div > input,
+.main > article > .settings > .infos > div > textarea {
+  border: 1px solid #919BB1;
+  border-radius: 8px;
+  padding: 10px 10px;
+}
+.main > article > .settings > .infos > div > textarea {
+  resize: none;
+  height: 100px;
+}
+
+
+.main > article > .settings > .noti-settings > h6 {
+  font-weight: 100;
+  font-size: 20px;
+}
+.main > article > .settings > .noti-settings > div {
+  padding-left: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+}
+.main > article .toggle {
+  width: 50px;
+  height: 30px;
+  background: #919BB1;
+  border-radius: 20px;
+  position: relative;
+}
+.main > article .toggle::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: white;
+}
+.main > article .off::after {
+  left: 2.5px;
+  top: 2.5px;
+}
+.main > article .on {
+  background: #326F9C;
+}
+.main > article .on::after {
+  right: 2.5px;
+  top: 2.5px;
+}
+
+.main > article > .profiles > .profile-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+.main > article > .profiles > .profile-img > img {
+  width: 45%;
+}
+
+
+.main > article > .profiles > .follow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 100px;
+  margin-top: 30px;
+}
+.main > article > .profiles > .follow > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+.main > article > .profiles > .follow > div > h6 {
+  font-size: 20px;
+  font-weight: 100;
+}
+#save-profile {
+  width: 100px;
+  height: 40px;
+  background: #326F9C;
+  border-radius: 8px;
+  border: 0px;
+  color: white;
+  font-family: 'BM JUA_OTF', 'Noto Sans KR', sans-serif;
+  margin-left: auto;
+  font-size: 18px;
+}
